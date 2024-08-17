@@ -529,6 +529,15 @@ spec:
           requests:
             cpu: 70m
             memory: 200Mi
+        command: [ "redis-server" ]
+        args: 
+          - "--save"
+          - "60"
+          - "1"
+          - "--loglevel"
+          - "warning"
+          - "--appendonly"
+          - "yes"
       volumes:
       - name: redis-data
         emptyDir: {}
